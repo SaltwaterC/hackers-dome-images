@@ -1,0 +1,9 @@
+desc 'Cleans the temporary files and build artifacts'
+task :clean do
+  %w(
+    centos-5.1-x86_64
+  ).each do |img|
+    rm_f "#{img}/packer_cache"
+    rm_f "#{img}/#{img}-virtualbox.box"
+  end
+end

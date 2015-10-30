@@ -2,7 +2,8 @@ yum -y groupinstall Core
 yum -y install gcc make kernel-headers kernel-devel-`uname -r`
 
 # update sudo - vagrant expects sudo -E to work properly
-if ((1<<32)); then
+if [ `uname -m` == 'x86_64' ]
+then
   arch=x86_64
 else
   arch=i386

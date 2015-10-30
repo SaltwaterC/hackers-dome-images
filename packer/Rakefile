@@ -1,9 +1,10 @@
+desc 'Builds Vagrant box from template'
+task :build do
+  system 'packer build template.json'
+end
+
 desc 'Cleans the temporary files and build artifacts'
 task :clean do
-  %w(
-    centos-5.1-x86_64
-  ).each do |img|
-    rm_rf "#{img}/packer_cache"
-    rm_f "#{img}/#{img}-virtualbox.box"
-  end
+  rm_rf 'packer_cache'
+  rm_f '*-virtualbox.box'
 end

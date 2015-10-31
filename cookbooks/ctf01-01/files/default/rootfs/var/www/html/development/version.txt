@@ -1,0 +1,161 @@
+$Id: version.txt,v 1.29 2009-06-06 09:22:24 fraynaud1 Exp $
+openMairie : http://www.openmairie.org
+
+Attention, necessite version 2.00 openmairie
+
+version 1.03  ========================================
+
+correction de petits bugs suite utilisation europeenne (arles)
+
+(bug)  nbsp dans login.php (10/01/2009)
+(bug) affectation.etat et candidature.etat (29/05/2009)
+	sql/elu_selection.inc
+	sql/agent_selection.inc
+	sql/francais/affectation.etat.inc
+	sql/francais/candidature.etat.inc
+(bug) enregistrement de la date de naissance (06/06/2009)
+    obj/elu.class.php  
+
+
+patch 1.02-1 ==================================================
+30/10/2008
+(bug) droit.class.php setonchange
+
+version 1.02 ===================================================
+
+(bug) affectation.inc et candidature.inc (31 Mars 2008) 
+affichage que pour les scrutins non sold�s
+
+(bug) changement de page en sousform 11/03/2008
+scr/form.php
+
+(+) Composition bureau   8/03/2008
+data/mysql/ver1.02.inc
+dyn/menu.inc
+trt/composition_bureau.php
+sql/mysql/composition_bureau.etat.inc
+sql/mysql/composition_bureau.sousetat.inc
+
+(+)protection traitement  08/03/2008
+obj/periode.class.php
+obj/poste.class.php 
+
+(+) organisation edition dans le menu 08/03/2008
+sql/mysql/scrutin.inc
+trt/convocation_president.php
+trt/convocation_agent.php
+trt/recepisse.php
+
+(bug) agent_selection.inc et elu_selection.inc (3 Mars 2008)
+pb de javascript dans form.php pour changer de page
+
+(+) enlever le compteur de page sur publipostage
+pdf/fpdfetat_publipostage.php
+pdf/publipostage.php
+
+(+) ne pas appliquer les restrictions aux agents de centralisation
+/dyn/var.inc : variable indiquant le poste AGENT CENTRALISATION
+/obj/candidature.obj.php
+
+(+) amelioration
+sql/mysql/affectation_r.etat.inc : tri par bureau
+sql/mysql/scrutin_bureau.sousetat.inc : tri par ordre de candidat
+sql/mysql/scrutin_elu_bureau.etat.inc : sortie par bureau au choix
+
+(+) numerotation automatique des elus E000001 ...
+obj/elu.class.php
+
+
+(+) 08 Mars 2008
+Transfert automatique pour un candidat d un tour sur l autre pour un election de ses 'elus'
+trt/transfert_affectation.php
+trt/transfert_candidature.php
+
+(+) amelioration 11 mars 2008 acceleration saisie
+scr/scrutin.php : scrutin par defaut
+obj/affectation.class.php  setValsousFormulaire
+obj/candidature.class.php setValsousformulaire
+sql/mysql/affectation.form.inc
+
+
+*** modification de la base
+data/mysql/ver1.02.sql
+data/mysql/init.sql
+
+* creation de la table candidat et lien avec elu
+/sql/mysql/candidat.inc
+/sql/mysql/candidat.form.inc
+/obj/candidat.class.inc
+/sql/mysql/scrutin.inc
+/sql/mysql/affectation.form.inc
+/obj/affectation.class.inc
+
+* ordre dans scrutin-elu.reqmo.inc
+/sql/mysql/poste.inc
+/sql/mysql/poste.form.inc
+/sql/mysql/scrutin_elu.reqmo.inc
+
+* affectation automatique des heures
+/dyn/menu.inc
+/trt/affectation_heure.php
+/obj/utils.class.php
+/sql/mysql/periode.inc
+/sql/mysql/periode.form.inc
+/obj/periode.class.php
+/obj/candidature.class.php  (suppression traitement js qui ne fonctionnait pas)
+
+* doc
+doc/agent.html
+doc/elu.html
+doc/candidature.html
+doc/affectation.html
+doc/candidat.html
+
+version 1.01 ===================================================
+modification election arles  05/02/2008
+
+modification de la base
+data/mysql/ver1.01.sql
+data/mysql/init.sql
+
+dyn/menu.inc
+
+* requete
+sql/mysql/agent.inc
+sql/mysql/elu.inc     
+sql/mysql/poste.inc
+sql/mysql/poste.form.inc
+sql/mysql/poste.inc
+sql/mysql/poste.form.inc
+sql/mysql/periode.inc
+sql/mysql/periode.form.inc
+sql/mysql/affectation.form.inc
+sql/mysql/candidature.form.inc
+* etat
+sql/mysql/affectation.etat.inc
+sql/mysql/candidature.etat.inc
+sql/mysql/candidature_p.etat.inc
+sql/mysql/affectation_p.etat.inc
+* doc
+doc/periode.html
+doc/poste.html
+* obj
+obj/poste.class.php
+obj/periode.class.php
+obj/candidature.class.php
+obj/affectation.class.php
+
+compatibilite configuration par defaut wamp2
+scr/form.php
+scr/sous_form.php
+
+Version 1.00 ====================================================
+
+1ere version operationnelle
+
+
+version 002 =====================================================
+suite presentation au groupe de travail du 20/11/2007
+- heures supplementaires
+- controles candidature et affectation
+- bureau : candidature + affectation

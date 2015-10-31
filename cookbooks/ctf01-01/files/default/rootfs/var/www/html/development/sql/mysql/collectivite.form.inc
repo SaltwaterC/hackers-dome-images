@@ -1,0 +1,9 @@
+<?php
+$tableSelect="collectivite";
+$champs=array("id",
+              "ville",
+              "logo",
+              "maire"
+             );
+$selection="";
+?>

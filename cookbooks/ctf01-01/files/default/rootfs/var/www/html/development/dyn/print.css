@@ -1,0 +1,197 @@
+/**
+ * $id$
+ *
+ */
+
+body
+{
+    margin: 0;
+    padding : 0;
+    background-color: #f3f3f3;
+    color: #333333;
+    font: 0.9em/1.1em tahoma, verdana, arial, helvetica, "bitstream vera sans", sans-serif;
+}
+
+img
+{
+    border: 0px solid #000000;
+    vertical-align: middle;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#conteneurmenu
+{
+    margin:0;
+    padding:0;
+    display:none;
+}
+#header
+{
+    margin:0;
+    padding:0;
+    display : none;
+}
+
+#menu_fond
+{
+        margin:0;
+    padding:0;
+    display : none;
+}
+
+#logo
+{
+        margin:0;
+    padding:0;
+    display : none;
+}
+
+#ville
+{
+        margin:0;
+    padding:0;
+    display : none;
+}
+
+#top
+{
+        margin:0;
+    padding:0;
+    display : none;
+}
+
+#top a.MotdePasse
+{
+    display : none;
+}
+
+#top a.Deconnexion
+{
+    display : none;
+}
+
+#top a.Identification
+{
+    display : none;
+}
+
+#top a:link, #header a:visited 
+{
+    display : none;
+}
+
+#top a:hover 
+{
+    display : none;
+}
+
+#entete
+{
+    margin:0;
+    padding:0;
+    border : 0px solid black;	
+    background-color : #DDDDDD;
+    height : 27px;
+    color : #042C87;
+    font-weight : bold;
+}
+
+#titre
+{
+    margin:0;
+    padding:0;
+    border : 0px solid #000000;	
+}
+
+#aide
+{
+        margin:0;
+    padding:0;
+    display : none;
+}
+
+#footer
+{
+        margin:0;
+    padding:0;
+    display : none;
+}
+
+#footerName
+{
+    display : none;
+}
+
+#footer a
+{
+    display : none;
+}
+
+#footer a:hover
+{
+    display : none;
+}
+
+/**
+ * CONTENT GENERAL
+ */
+#content
+{
+    font-size : 11px;
+    border : 1px solid #dedede;
+    margin:0;
+    padding:0;
+}
+
+.menu, .ssmenu
+{
+    margin:0;
+    padding:0;
+    display: none;
+}
+
+table.tabEntete
+{
+    display: none;
+}
+
+/**
+ * Tableau
+ */
+table.tabCol
+{
+	width : 100%;
+    border-collapse: collapse;
+	border: 1px solid #000000;
+}
+tr.tabCol
+{
+    text-align:center;
+    color:#B1CDF4;
+    font-weight:bold;
+    border: 1px solid #000000;
+}
+tr.tabData td
+{
+    border: 1px solid #000000;
+}
+tr.tabCol td
+{
+    border: 1px solid #000000;
+}
+tr.tabData 
+{
+    border: 1px solid #000000;
+}
+td.largeurtd
+{
+	text-align : center;
+}
+td.tabDataMouvement 
+{
+    border: 1px solid #000000;
+}

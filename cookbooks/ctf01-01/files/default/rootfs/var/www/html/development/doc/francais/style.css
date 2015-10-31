@@ -1,0 +1,47 @@
+body
+{
+    margin: 0;
+    padding : 1em;
+    background-color: #f3f3f3;
+    color: #333333;
+    font: 0.8em tahoma, verdana, arial, helvetica, "bitstream vera sans", sans-serif;
+}
+
+img
+{
+    border: 0px solid #000000;
+    vertical-align: middle;
+}
+
+h2
+{
+    font-weight: bold;
+    color: #1111BB;
+}
+
+h3
+{
+    font-weight: bold;
+    color: #1111BB;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+p
+{
+    text-align: justify;
+}
+
+a
+{
+    color : blue;
+    font-weight:bold;
+    text-decoration: none;
+}
+a:hover
+{
+    color : #ffffff;
+    background-color:darkblue;
+    font-weight:bold;
+    text-decoration: underline;
+}

@@ -1,0 +1,7 @@
+$Id: specific.txt,v 1.1 2008-07-17 14:11:03 jbastide Exp $
+__________________________________________________________
+
+ spg/login.php:
+ - apres message de bienvenue
+   (+) CHOIX SCRUTIN PAR DEFAUT lien VERS scr/scrutin.php pour
+       valoriser $_Session['scrutin']

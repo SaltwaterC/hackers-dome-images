@@ -1,0 +1,4 @@
+# managed file - do not edit
+SELINUX=disabled
+SELINUXTYPE=targeted
+SETLOCALDEFS=0

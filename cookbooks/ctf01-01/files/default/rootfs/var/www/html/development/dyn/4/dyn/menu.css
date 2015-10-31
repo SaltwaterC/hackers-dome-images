@@ -1,0 +1,117 @@
+/***** menu CSS *****/
+@media print {
+/*A l'impression on cache le menu, marche au moins pour IE, Moz et Opéra.*/
+    .menu, .ssmenu {
+        visibility:hidden;
+    }
+}
+
+.menu, .ssmenu {
+/* Il est important de laisser une largeur, au cas où le Javascript soit désactivé.
+margin aussi */
+    font-size:10px;
+    border:0px solid #3977F5;
+    color:#ffffff;
+    padding:0px;
+    padding-top:0px;
+    padding-right:0px;
+    margin-right:0px;
+    margin:0px;
+}
+.menu {
+    text-align:left;
+}
+.ssmenu {
+    background:#FBFBEF;
+    border:1px solid #000000;
+    padding-top:0px;
+    text-align:left;
+}
+
+.menu span, .ssmenu span {
+/* pour cacher les ; en fin de <li>, ce qui permet aux synthèse vocales de prendre une
+    pause dans l'élocution */
+    display:none;
+}
+
+.ssmenu ul, .ssmenu li {
+/* Les items (les <li>) des sous-menus, notamment pour enlever les puces des liste */
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+.menu a, .menu a:visited{
+/* Les liens qui ne sont pas sous le curseur. */
+    font: 1.1em/1.3em Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+    text-decoration:none;
+    color:#ffffff;
+    font-size:12px;
+    font-weight:bold;
+    padding:2px 1px;
+/* Ne pas modifier le block */
+    display:block;
+/*  Un width:100% fait planter Mozilla, sans le width:100% c'est IE et Opera... La combinaison
+    aucun width et height:100% marche sur tous, donc ne pas toucher ces 2 lignes */
+/*  height:100%;
+    margin:0px;*/
+    margin:0px;
+    width:100%;
+    voice-family: "\"}\"";
+    voice-family:inherit;
+    background-image:url("../img/cle.png");
+    background-repeat:no-repeat;
+}
+.ssmenu a,.ssmenu a:visited {
+/* Les liens qui ne sont pas sous le curseur. */
+    font: 1.1em/1.3em Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+    text-decoration:none;
+    color:#000000;
+    font-size:11px;
+    font-weight:normal;
+    padding:2px 1px;
+/* Ne pas modifier le block */
+    display:block;
+/*  Un width:100% fait planter Mozilla, sans le width:100% c'est IE et Opera... La combinaison
+    aucun width et height:100% marche sur tous, donc ne pas toucher ces 2 lignes */
+/*  height:100%;
+    margin:0px;*/
+    margin:0px;
+    width:100%;
+    voice-family: "\"}\"";
+    voice-family:inherit;
+}
+html>body .menu a, html>body .menu a:visited, html>body .menu a:hover, html>body .menu a:active,
+html>body .ssmenu a, html>body .ssmenu a:visited, html>body .ssmenu a:hover, html>body .ssmenu a:active {
+    width :auto;
+}
+
+.ssmenu ul:hover, .ssmenu a:hover, .ssmenu a:focus {
+/* Les liens sous le curseur.
+    On change les couleurs du texte et de fond, et on enlève le soulignement.
+    */
+    background-color:#4353EF;/*FE3558;*/
+    color:#ffffff;
+    font-size:11px;
+    border-top:0px solid #000000;
+   border-bottom:0px solid #000000;
+}
+.menu a:hover, .menu a:focus {
+/* Les liens sous le curseur.
+    On change les couleurs du texte et de fond, et on enlève le soulignement.
+    */
+    background-color:transparent;/*#4353EF;/*FE3558;*/
+    color:#ffffff;
+    font-size:11px;
+    border-top:0px solid #000000;
+   border-bottom:0px solid #000000;
+    background-image:url("../img/cle_actif.png");
+    background-repeat:no-repeat;
+}
+.titresousmenu
+{
+    font-size : 10px;
+    font-weight : bold;
+    font-style : italic;
+}
+
+

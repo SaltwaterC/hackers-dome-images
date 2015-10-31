@@ -1,0 +1,180 @@
+$Id: ver_2.00.txt,v 1.1 2008-07-24 13:18:52 jbastide Exp $
+
+=====================================
+Evolution des versions 1.xx vers 2.00
+=====================================
+* formulairedyn.class.php
+  - ajout fonction upload2,date2,comboD2
+  - ajout fonction javascript vupload2 ,vdate2 ,vcorrel2
+* require_once des obj -> inclure les nouvelles classes openMairie
+require_once ("formulairedyn.class.php");
+require_once ("dbformdyn.class.php");
+*txform.class.php (msg validation en creation ou mise a jour)
+*om_lettretype.class.php(mise en form du texte (U souligné ajoutBI et UI)
+*om_etat.class.php (idem)
+*om_sousetat.class.php (idem)
+
+* script javascript des obj
+mettre en tete du programme
+
+* utilisation et parametrage des href dans les sql/... .inc
+href = laissez href[0] ajout; [1] modif; [2] sup / pdf => au dessus de 2
+
+* fonction checkbox differente dans formulairedyn.class.php
+  passage par value et non par checked dans la fonction affichersousform()
+
+
+====================================
+passage à la version internationale 2.00 -> 2.02
+====================================
+
+1- Methodes de transfert openExemple
+    ---------------------------------- 
+
+RACINE
+index.php - readme - version.inc depends
+- modifier readme.txt et readme_english.txt -> fonction de l application (remplacer openexemple et openmairie)
+- modifier version.inc : mois annee version
+
+DOC
+- creer repertoire francais
+- copier doc/*.htm dans francais et supprimer * .htm dans doc
+
+SQL
+- creer repertoire sql/mysql/francais
+- copier sql/mysql/*.etat,sousetat,reqmo,lettretype.inc dans francais et supprimer * .inc dans sql/mysql
+
+SCR transferer la totalité sauf edition
+edition.php : copier les liens specifiques de l application
+
+SPG
+copier tous les fichiers
+
+IMG
+copier toutes les images sauf celles specifiques à l appli : logo.png , logopdf.png, logorvb.png
+
+PDF
+copier tous les fichiers
+modifier session('exemple')  pdf.php, pdfetat,pdfetiquette,pdflettretype
+
+DYN
+recuperer tous fichiers sauf
+- menu.inc
+- var.inc , varpdf.inc, varlettretype.inc, varetat.inc
+- connexion.php et base.php
+
+Mettre a niveau var.inc
+- conserver les parametres specifiques
+Mettre a niveau menu.inc
+- copier les options de l application
+- voir nb d option dans menu.js
+- corriger les anciens styles
+
+Choix icone ou non
+
+Remplacer dans chaque option 
+
+ 
+
+remplace menu.inc
+
+$titre=" libelle_option ";
+$ico="../img/ico_nomico.png";
+par
+
+$titre="&nbsp;".$this -> lang("libelle_option ");
+if (isset($icone_unique)){
+   if ($icone_unique==1){
+      $ico="../img/pixel.gif";
+   }else{
+      $ico="../img/ico_ nomico .png";
+   }
+}else{
+   $ico="../img/ico_ nomico.png";
+}
+
+
+
+
+OBJ
+copier utils.class -> voir lang['title_html'] dans francais.inc
+
+PHP
+copier le repertoire php
+
+LANG
+creer le repertoire
+transferer francais.inc
+
+2- Modifier les classes metiers
+    --------------------------
+
+- tabclassdyn - idx et idz dans collectivite.inc
+if(isset($idx)){
+  if($idx != "]")
+   if (trim($idx!=""))
+     $ent = $ent."-><font id='idz1'>&nbsp;".$idx."&nbsp;</font>";
+}
+if(isset($idz) ){
+     if (trim($idz!=""))
+      $ent = $ent."&nbsp;<font id='idz1'>&nbsp;".strtoupper($idz)."&nbsp;</font>";
+}
+//
+
+
+OBJET.CLASS --------------------------------------
+
+- intermédiare
+mettre en entete les javascripts
+supprimer majdyn() (version 2.01)
+
+- mettre les path et pointer sur les dyn
+include ("../dyn/var.inc");
+require_once ($path_om."formulairedyn.class.php");
+require_once ($path_om."dbformdyn.class.php");
+
+- traduction
+
+* methode vérifier
+
+$f="&nbsp!&nbsp;&nbsp;&nbsp;&nbsp;";
+$imgv="<img src='../img/punaise.png' style='vertical-align:middle' hspace='2' border='0'>";
+
+     $this->msg= $this->msg.$imgv.$this->lang("profil")."&nbsp;".
+     $this->lang("obligatoire").$f;
+
+* methode setLib
+
+si surcharge de la méthode
+parent :: setLib($form,$maj);
+et/ou corriger $this->lang('article')
+
+* methode setSelect
+
+   $contenu[1][0]=$this->lang("choisir")."&nbsp;".
+   $this->lang("deliberation");
+
+* methode clesecondaire
+
+*** verifier si plusieurs cle secondaire remise à true 2eme verif
+function cleSecondaire($id,$db,$val,$debug) {
+$this->correct=True;
+
+*** 
+
+
+ $f="&nbsp!&nbsp;&nbsp;&nbsp;&nbsp;";
+ $imgv="<img src='../img/punaise.png' style='vertical-align:middle' hspace='2' border='0'>";
+
+        $this->msg = $this->msg.$imgv.$this->lang('il_y_a')." ".$res->numrows().
+        " ".$this->lang('enregistrement').' '.$this->lang('table')." entre ".
+        $this->lang('article')." [".$id."]".$f;
+
+
+
+
+
+
+
+
+

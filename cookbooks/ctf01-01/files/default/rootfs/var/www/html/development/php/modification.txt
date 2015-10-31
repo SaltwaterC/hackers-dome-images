@@ -1,0 +1,15 @@
+$Id: modification.txt,v 1.2 2008-10-16 12:58:13 fraynaud1 Exp $
+Modification version bundle opencimetiere 1.11
+
+PEAR
+* pear/DB/mysql => require DB/common.php : common.php
+* pear/DB/pgsql => require DB/common.php : common.php
+* pear/DB/common.php   ligne 24 : require pear.php  ligne supprimée
+
+OPENMAIRIE
+* openmairie/fpdf_etat.php
+* openmairie/db_fpdf.php
+ligne 6 
+include("../dyn/var.inc");
+require_once ($path_fpdf."fpdf.php");
+

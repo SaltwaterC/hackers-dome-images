@@ -1,0 +1,29 @@
+$Id: install.txt,v 1.1 2008-07-24 13:18:52 jbastide Exp $
+openMairie : http://www.openmairie.org
+contact@openmairie.org
+
+Ce document a pour objet le parametrage de php.ini
+
+*** erreur 05/02/2007 signale par creatic tessier.p@cdg59.fr
+Les variables post ne renvoie pas de données (erreur champ cle et data obligatoire)
+wamp2 par defaut   register_long_arrays = Off  
+-> mettre à register_long_arrays On 
+; Whether or not to register the old-style input arrays, HTTP_GET_VARS
+; and friends.  If you're not using them, it's recommended to turn them off,
+; for performance reasons.
+register_long_arrays = On
+
+scr\form.php - solution proposée le 04/02/2008 par david.epely@adullact.org
+Remplacez "$HTTP_POST_VARS" par "$_POST" (sans guillemets) (vers ligne 400)
+
+*** erreur 29/03/2007
+contribution de frederic.gaudy@cc-thouarsais.fr - wamp2 par defaut
+l'utilisation de tag '<?' ne permet pas des installations dont l'option php "short_open_tag=Off" est défini.
+-> mettre a short_open_tag On
+; Allow the <? tag.  Otherwise, only <?php and <script> tags are recognized.
+; NOTE: Using short tags should be avoided when developing applications or
+; libraries that are meant for redistribution, or deployment on PHP
+; servers which are not under your control, because short tags may not
+; be supported on the target server. For portable, redistributable code,
+; be sure not to use short tags.
+short_open_tag = On

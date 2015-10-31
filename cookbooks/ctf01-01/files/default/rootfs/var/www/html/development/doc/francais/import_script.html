@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+    <title>AIDE OPENMAIRIE</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head> 
+
+<body>
+<a class=lien href="sommaire.php">S O M M A I R E</a><br><br>
+
+import_script.php permet les imports dans la base de données de fichier au <br>
+format csv téléchargé<br><br>
+
+exemple : /rec/utilisateur.txt <br><br>
+
+<i>La description du transfert se fait dans le fichier extension import_nomobjet.inc dans /rec:<br>
+<br>
+exemple : import_script.php?obj=utilisateur<br><br> </i>
+
+dans <b>import_utilisateur.inc</b> , il est défini:<br><br>
+
+- $import= "Insert utilisateur" : Message <br>
+- $table= "utilisateur" : table d importation <br>
+- $id="idutilisateur" :  champ de numerotation automatique / vide sinon <br>
+- $verrou= 1 mise a jour de la base  = 0 pas de mise a jour  => phase de test <br>
+- $DEBUG =1 affichage des enregistrements à l ecran =0 pas d affichage <br>
+- $fic_erreur=1; // =0 pas de fichier d erreur / =1  fichier erreur <br>
+- $fic_rejet=1; // =0 pas de fichier pour relance / =1 fichier relance traitement<br>
+  ce fichier contient les enregistrements en erreur et permet de relancer le<br>
+  traitement après correction (manuelle)<br><br>
+$ligne1=1 => la premiere ligne contient les noms de champs  / 0 sinon <br><br>
+<b>Zone obligatoire</b>  <br><br>
+$obligatoire['nom']=1;// obligatoire = 1 <br>
+$obligatoire['login']=1;// obligatoire = 1<br>  <br>
+<b>test d existence</b> <br><br>
+$exist['profil']=1 =>  0=non / 1=oui <br>
+$sql_exist["profil"]= "select profil from profil where profil = '" <br><br>
+<b>liste des zones à inserer</b>   <br>
+mettre en commentaire les zones non traitées<br>
+      $zone['nom']='0' => la 1ere zone contient le nom  <br>
+      $zone['login']=1 => la 2eme zone contient le login  <br>
+      $zone['pwd']='2' => la 3eme zone contient le mot de passe (crypté)  <br>
+      $zone['profil']='3' => la 4 eme zone contient le profil    <br><br>
+<b>Valeur par defaut </b>
+     Si $zone['profil']="" on peut definir un profil par defaut  <br>
+     $defaut['profil']='5' => profil par defaut =5  <br>
+
+
+
+
+</body>
+</html>
+
+
+
+

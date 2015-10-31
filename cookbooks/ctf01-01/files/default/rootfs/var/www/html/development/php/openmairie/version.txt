@@ -1,0 +1,220 @@
+$Id: version.txt,v 1.2 2008-11-13 08:52:18 fraynaud1 Exp $
+openMairie : http://www.openmairie.org
+contact@openmairie.org
+
+version 2.03 =================================================================
+10/11/2008 FR (opencourrier2)
+anglais.inc traduction om_etat sousetat lettretype
+om_lettretype.class.php ; correction espace
+
+version 2.02 ==================================================================
+version internationale
+traduction francais.inc, anglais.inc, espagnol.inc, allemand.inc, italien.inc
+variable langue in : om_var.inc
+methodes supplementaire de traduction
+
+version 2.01 ==================================================================
+ (bug)tab.class -> calcul nombre d'enregistrement
+ si group by dans requetes sous formulaire (fonction affichersousformulaire et afficheronglet)
+
+(bug) fpdf_etat.php -> traitement  entete colonne sous etat 
+quand $sousetat['entete_orientation'] existe et egal = zero       
+($sousetat['entete_orientation']=array("0","0","0");)
+
+(+) methode voir() dans formulaire.class.php
+[opencimetiere 1.11]
+
+
+version 2.00 21/11/2007 ================================================================
+
+version full onglet avec form en onglet : 4 nouvelles classes
+
+formulairedyn.class
+    chargement de tous les javascripts en entete 
+        textmultiarea  : selectauto
+        combog et comboD vcorrel2
+        upload : vupload, voir
+        localisation : localisation
+        rvb : rvb
+    nouvelles fonctions
+        selelectliste
+        selectlistemulti
+        setOnkeyup
+        setOnclick
+        recuperePostvarsousform
+
+tabdyn.class.php
+    paginationonglet
+    afficher
+    afficherentetecolone
+    afficheronglet
+
+dbformdyn
+    formulaire
+     
+            
+
+
+
+version 1.19  ===================================================================
+dbform.class: supprime ligne apres /form
+tab.class : bug balise < ? dans methode pageselect (ville de santes)
+om_lettretype.class.php : compatibilite postgresql (GI) longueur du logo setMax(logo,20)
+
+version 1.18 ===================================================================
+/openmairie/dbform.class.php:
+correction accents dans les messages -> compatibilite linux
+/openmairie/formulaire.class.php
+type httpclick = openmairie_foncier version 1.05
+
+
+version 1.17 ===================================================================
+/openmairie/tab.class.php: prendre en compte la clause group by pour calculer le nombre d'enregistrements (openresultat, openM14)
+
+/openmairie/formulaire.class.php
+type http = openmairie_cimetiere_1.09
+
+/openmairie/tab.class.php: prendre en compte la clause group by pour calculer le nombre d'enregistrements (openresultat, openM14)
+
+/openmairie/db_form.class.php : modifier et supprimer => position triggerapres
+
+/openmairie/txform message methode ajouter et modifier
+
+version 1.16 ===================================================================
+dbform ajouter => recuperer nextid dans le trigger (openm14)
+dbform calcul de cumul (openm14)
+    triggerajouterapres
+    triggermodifierapres
+    triggersupprimerapres
+    en ajout affichage apres validation (openm14) /necessite nouvelle version form.php
+    pb avec easy php php4
+dbform : $_SESSION['verrou'] => $verrou=1 dans var.inc 
+    desactiver en formulaire et en sous formulaire
+    activer en ajouter modifier supprimer
+    **** ATTENTION pb de compatibilit� si le verrou n est pas desactiver en     formulaire et sous formulaire (redefinition en objet metier)
+
+formulaire hiddenstaticnum  (openM14)
+
+version 1.15 ====================================================================
+31 Octobre 2006
+dbform bug procuration openelec (1er enregistrement / jointure)
+26 octobre 2006
+modif tab.class ->fonction afficher onglet -> ajout bouton mail
+
+ajout fonction mail dans formulaire.class.php ->champ type 'mail'->bouton mailto
+ajout fonction affichermail dans tab.class.php ->bouton mailto (methode affichermail)
+
+version 1.14 ====================================================================
+
+om_etat.class.php : rotation d entete (jlb)
+formulaire.class.php : bug checked en recupererPostVar (php4)
+db_form.class.php : bug autocommit modifier class formulaire et dbform
+message => css table
+
+version 1.13 ====================================================================
+fpdf-etat ; orientation entete des colones
+
+
+
+version 1.12 ====================================================================
+
+om_sousetat : entete_orientation orientation des entete de colones (openresultat)
+formulaire :
+
+
+
+
+version 1.11 ====================================================================
+
+tab.class methode paginationonglet sans  recherchedyn
+dbform
+    sousformulaire
+    retoursousformulaire
+dans openmairie_exemple 1.11
+    form.php
+    soustabdyn.php
+    sousform.php
+
+=> retour onglet et page de depart (objsf et premiersf)
+
+formulaire.class.php : nouveaux types
+    textreadonly
+    checkbox
+    texteareahiddenstatic
+
+
+
+
+version 1.10 ====================================================================
+module d affectation de couleur pour etat et sous etat
+    spg/rvb.php
+    spg/rvb.js
+formulaire.class.php
+    rvb fenetre rvb.php
+readme.txt mise a jour exemple
+dbform.class.php => pageselect_onglet affichage en css
+xx
+
+version 1.09 ====================================================================
+
+dbform.class.php
+    verifier
+
+formulaire.class.php
+  textareamulti = amelioration
+  rvb = amelioration
+  debug balises < ?php echo $x ?> a la place de < ? = $x ?>
+  compatibilte derniere version wamp
+
+
+txform.class.php
+  debug : ajouter + modifier  include connexion
+  enrvb
+  enarray
+
+pdf : gestion des �tat, sousetat et lettre type
+  fpdf_etat.php
+  om_lettretype.class.php
+  om_etat.class.php
+  om_sousetat.class.php 
+
+
+
+version 1.08 ====================================================================
+
+formulaire.class.php
+   type champ textareamulti
+
+txform.class.php
+   classe permettant la gestion de texte
+
+version 1.07 02/02/2006===========================================================
+
+tab.class.php
+- tabdyn
+- afficheimage (opencatalogue)  + num a droite
+
+dbform.class.php
+    triggermodifier
+    triggerajouter
+    triggersupprimer
+
+
+version 1.061 20/01/2006 =======================================================
+
+bug formulaire
+
+version 1.06 18/01/2006 ========================================================
+
+modification
+- sous formulaire
+- localisation (opencimetiere)
+
+dbform.class.php
+formulaire.php
+
+soustab.php
+sousform.php
+
+version 1.05 26/12/2005 ========================================================
+1 ere version diffus�

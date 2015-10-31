@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+    <title>AIDE OPENMAIRIE</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head> 
+
+<body>
+<a class=lien href="sommaire.php">S O M M A I R E</a><br><br>
+
+<i>vous devez avoir les droits d ecriture dans le repertoire sql ...</i><br><br>
+
+
+<b>Paramétrage des SOUS ETATS</b><br><br>
+Pour parametrer les états il faut paramétrer:<br>
+- Parametres du titre<br>
+- Entete du tableau<br>
+- Data du tableau<br>
+- Cellule du tableau</b><br>
+- Total du tableau</b><br>
+- Moyenne du tableau</b><br>
+- nombre d enregistrement du tableau</b><br>
+- operations du tableau</b><br>
+- sql (la requete sql de l etat)</b><br>
+
+
+<br>
+<b>Titre</b><br><br>
+- titre : texte du titre <br>
+   * variable: £idx, £aujourdhui ... définies en dyn/varetatpdf.inc<br>
+   * entre [] zones définies en requete SQL : exemple [nom]<br>
+- hauteur de chaque ligne(suivant taille de la police)<br>
+- Police (font), attribut, taille, bordure, alignement du titre <br><br>
+- fond du titre <br>
+  * avec ou sans (transparent)<br>
+  * couleur du fond (avec fond)=> choix couleur: <img src="../../img/localisation.png"><br>
+- couleur du texte => choix couleur: <img src="../img/localisation.png"><br>
+- intervalle début (avant tableau) , fin (après tableau)<br><br>
+
+
+
+<b>Entete du tableau</b><br><br>
+<i>il s agit de l entete de colonne du tableau qui définissent les zones
+de la requete sql (ex select nom_usage as nom from ...) affichage de nom<br></i>
+- avec ou sans entete <br>
+- fond de  l entete <br>
+  * avec ou sans (transparent)<br>
+  * couleur du fond (avec fond)=> choix couleur: <img src="../../img/localisation.png"><br>
+- couleur du texte => choix couleur: <img src="../../img/localisation.png"><br>
+- hauteur de l entete<br><br>
+<i>bordure et alignement pour chaque colone SQL</i><br>
+- bordure pour chaque colonne: T = top, L= left, B = bottom, R= right<br>
+- alignement de chaque colone : C= center, L= left, R =right, J = justify <br>
+<br>
+
+<b>Data du tableau</b><br><br>
+<i>il s agit des données  du tableau définies dans les zones
+de la requete sql </i><br><br>
+- largeur du tableau (paramétre général) <br>
+- bordure <br>
+  * avec ou sans (transparent)<br><br>
+  * choix couleur de la bordure: <img src="../../img/localisation.png"><br>
+<br>
+<i>pour une meilleure lecture des données il est possible d alterner 2
+couleurs de fond </i><br><br>
+- couleur du fond1 => choix couleur: <img src="../../img/localisation.png"><br>
+- couleur du fond2 => choix couleur: <img src="../../img/localisation.png"><br>
+<br>
+
+<b>Cellule du tableau</b><br><br>
+<i>il s agit des cellules contenant les données définies dans les zones
+de la requete sql </i><br><br>
+- fond de la cellule <br>
+  * avec ou sans (transparent)<br>
+- hauteur de la cellule <br>
+<i> par défaut, la police de caractere est reduite si le texte dépasse et le retour charriot
+est effectué pour les zones textes </i><br><br>
+- largeur de chaque colone: le total des largeurs de colones doit etre égal à la largeur du tableau<br>
+<br>
+
+<i>bordure et alignement pour chaque colone SQL</i><br><br>
+- bordure pour chaque colonne: T = top, L= left, B = bottom, R= right<br>
+- bordure1 pour chaque colonne: T = top, L= left, B = bottom, R= right<br>
+- alignement de chaque colone : C= center, L= left, R =right, J = justify <br>
+<br>
+<b>Total du tableau</b><br><br>
+<i>Ces zones sont à parametrer si il faut afficher un total ou plusieurs</i><br><br>
+- fond de la cellule <br>
+  * avec ou sans (transparent)<br>
+  * choix de la couleur du fond: <img src="../../img/localisation.png"><br>
+
+- taille de la police de la cellule total <br>
+- hauteur de la cellule total <br>
+<br>
+<i>bordure et alignement pour chaque colone SQL</i><br><br>
+- bordure pour chaque colonne: T = top, L= left, B = bottom, R= right<br>
+- alignement de chaque colone : C= center, L= left, R =right, J = justify <br>
+<br>
+<b>Moyenne du tableau</b><br><br>
+<i>Ces zones sont à parametrer si il faut afficher une ou plusieurs moyennes </i><br><br>
+- fond de la cellule <br>
+  * avec ou sans (transparent)<br>
+  * choix de la couleur du fond: <img src="../../img/localisation.png"><br>
+
+- taille de la police de la cellule moyenne <br>
+- hauteur de la cellule moyenne <br>
+<br>
+<i>bordure et alignement pour chaque colone SQL</i><br><br>
+- bordure pour chaque colonne: T = top, L= left, B = bottom, R= right<br>
+- alignement de chaque colone : C= center, L= left, R =right, J = justify <br>
+<br>
+<b>Nombre enregistrement du tableau</b><br><br>
+<i>Ces zones sont à parametrer si il faut afficher un ou plusieurs nombre d enregistrement </i><br><br>
+- fond de la cellule <br>
+  * avec ou sans (transparent)<br>
+  * choix de la couleur du fond: <img src="../../img/localisation.png"><br>
+
+- taille de la police de la cellule nombre <br>
+- hauteur de la cellule nombre <br>
+<br>
+<i>bordure et alignement pour chaque colone SQL</i><br><br>
+- bordure pour chaque colonne: T = top, L= left, B = bottom, R= right<br>
+- alignement de chaque colone : C= center, L= left, R =right, J = justify <br>
+<br>
+<b>Operations du tableau</b><br><br>
+<br>
+<i>Numerique, total, moyenne, nombre pour chaque colone SQL</i><br><br>
+- numerique permet un affichage des numerique: 999: zone alphanumerique, 0 (nombre entier), 1  (1 decimale), 2 ( 2 decimales) ...<br>
+<br><i>Ces zones sont à parametrer si il est souhaité une operation (total, moyenne, nombre</i>)<br><br>
+- total : 0 colone sans, 1 colone avec<br>
+- moyenne : 0 colone sans, 1 colone avec<br>
+- nombre : 0 colone sans, 1 colone avec<br>
+<br>
+<b>SQL</b><br><br>
+- SQL : requete <br>
+   * variable: £idx, £aujourdhui ... définies en dyn/varetatpdf.inc<br>
+   * entre [] zones définies en requete SQL : exemple [nom]<br>
+

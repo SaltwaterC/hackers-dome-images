@@ -1,0 +1,62 @@
+<?php
+//07/08/2007   8:53:06
+$sousetat['titre']="Droit à  la date de £aujourdhui 
+(variable date définie dans dyn/varetatpdf.inc)";
+$sousetat['titrehauteur']="10";
+$sousetat['titrefont']="helvetica";
+$sousetat['titreattribut']="B";
+$sousetat['titretaille']="10";
+$sousetat['titrebordure']="0";
+$sousetat['titrealign']="L";
+$sousetat['titrefond']="1";
+$sousetat['titrefondcouleur']=array("255","255","255");
+$sousetat['titretextecouleur']=array("0","0","0");
+$sousetat['intervalle_debut']=5;
+$sousetat['intervalle_fin']=5;
+$sousetat['entete_flag']="1";
+$sousetat['entete_fond']="1";
+$sousetat['entete_orientation']=array("0","0","0");
+$sousetat['entete_hauteur']="8";
+$sousetat['entetecolone_bordure']=array("TL","LTB","LTBR");
+$sousetat['entetecolone_align']=array("C","C","C");
+$sousetat['entete_fondcouleur']=array("255","255","255");
+$sousetat['entete_textecouleur']=array("0","0","0");
+$sousetat['tableau_largeur']="195";
+$sousetat['tableau_bordure']="1";
+$sousetat['tableau_fontaille']="10";
+$sousetat['bordure_couleur']=array("0","0","0");
+$sousetat['se_fond1']=array("243","246","246");
+$sousetat['se_fond2']=array("255","255","255");
+$sousetat['cellule_fond']="1";
+$sousetat['cellule_hauteur']="7";
+$sousetat['cellule_largeur']=array("75","75","45");
+$sousetat['cellule_bordure_un']=array("TL","TL","TLR");
+$sousetat['cellule_bordure']=array("L","L","LR");
+$sousetat['cellule_align']=array("L","L","C");
+$sousetat['cellule_fond_total']="0";
+$sousetat['cellule_fontaille_total']="10";
+$sousetat['cellule_hauteur_total']="15";
+$sousetat['cellule_fondcouleur_total']=array("221","239","248");
+$sousetat['cellule_bordure_total']=array("TL","T","TLR");
+$sousetat['cellule_align_total']=array("L","L","C");
+$sousetat['cellule_fond_moyenne']="1";
+$sousetat['cellule_fontaille_moyenne']="10";
+$sousetat['cellule_hauteur_moyenne']="5";
+$sousetat['cellule_fondcouleur_moyenne']=array("219","233","240");
+$sousetat['cellule_bordure_moyenne']=array("BTL","BTL","BTLR");
+$sousetat['cellule_align_moyenne']=array("L","L","C");
+$sousetat['cellule_fond_nbr']="1";
+$sousetat['cellule_fontaille_nbr']="10";
+$sousetat['cellule_hauteur_nbr']="7";
+$sousetat['cellule_fondcouleur_nbr']=array("255","255","255");
+$sousetat['cellule_bordure_nbr']=array("TBL","TBL","TBLR");
+$sousetat['cellule_align_nbr']=array("L","L","C");
+$sousetat['cellule_numerique']=array("999","999","999");
+$sousetat['cellule_total']=array("0","0","0");
+$sousetat['cellule_moyenne']=array("0","0","0");
+$sousetat['cellule_compteur']=array("0","0","1");
+$sousetat['sql']="SELECT  droit, droit.profil, libelle_profil as libelle
+from droit inner join profil
+on droit.profil = profil.profil
+where droit.profil <= £idx ";
+?>

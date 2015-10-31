@@ -1,0 +1,26 @@
+$Id: authors.txt,v 1.2 2007-12-01 17:37:23 fraynaud1 Exp $
+
+François Raynaud / contact@openmairie.org 
+Jean-Louis Bastide / contact@openmairie.org 
+
+Merci aux contributeurs
+
+
+patrick.guyon@ville-martigues.fr;
+Groupe de travail DSI 13
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    

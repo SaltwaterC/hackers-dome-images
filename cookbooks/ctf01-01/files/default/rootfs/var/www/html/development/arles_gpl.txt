@@ -1,0 +1,25 @@
+ARLES le 1 er décembre 2007,
+
+openSrutin fait partie du projet openMairie déposé sous licence GPL par la mairie d arles.
+
+Ce logiciel a été réalisé dans le cadre des missions de service public confiées par la ville d Arles aux auteurs qui conservent leur droit moral (voir authors.txt).
+
+Une delibération sera prise par le conseil municipal d Arles pour confirmer le depot d openscrutin sur adullact.net en license GPL.
+
+Vous avez la liberté :
+- d executer le programme, pour tous les usages
+- d etudier le fonctionnement du programme et de l adapter à vos besoins
+- de redistribuer des copies 
+- d ameliorer le programme et de publier ces ameliorations pour en faire profiter la communauté
+
+La redistribution même avec les ameliorations du programme ne peut se faire que sous licence GPL.
+
+
+
+
+
+
+
+
+
+    

@@ -1,0 +1,17 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 12.5.1
+
+platforms:
+  - name: centos-5.1
+    driver:
+      box: SaltwaterC/centos-5.1-i386
+      box_url: https://atlas.hashicorp.com/SaltwaterC/boxes/centos-5.1-i386/versions/5.1/providers/virtualbox.box
+
+suites:
+  - name: ctf01-01
+    run_list:
+      - recipe[ctf01-01]

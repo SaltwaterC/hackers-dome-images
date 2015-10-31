@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+    <title>AIDE OPENMAIRIE</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head> 
+
+<body>
+<a class=lien href="sommaire.php">S O M M A I R E</a><br><br>
+
+<i>vous devez avoir les droits d ecriture dans le repertoire sql ...</i><br><br>
+
+
+<b>Paramétrage des lettres type</b><br><br>
+Pour parametrer les états il faut paramétrer:<br>
+- Parametres généraux<br>
+- Parametres du titre<br>
+- Parametres du corps<br>
+- Requete SQL<br>
+
+<b>Parametrage généraux</b><br><br>
+- orientation: portrait ou paysage <br>
+- Format : A4, A3 <br>
+- logo: <i>logo défini en collectivite</i><br>
+     * positionnement left/top du logo <img src="../../img/localisation.png"><br>
+
+<br><br>
+<b>Parametrage du titre</b><br><br>
+- titre : texte du titre <br>
+   * variable: £idx, £aujourdhui ... définies en dyn/varlettretypepdf.inc<br>
+   * entre [] zones définies en requete SQL : exemple [nom]<br>
+-   positionnement left/top du titre <img src="../../img/localisation.png"><br>
+- largeur du titre :  / 0 = largeur automatique<br>
+- hauteur de chaque ligne(suivant taille de la police)<br>
+- Police (font), attribut, taille, bordure, alignement du titre <br><br>
+
+<b>Parametrage du corps</b><br><br>
+- corps : texte du corps <br>
+   * variable: £idx, £aujourdhui ... définies en dyn/varlettretypepdf.inc<br>
+   * entre [] zones définies en requete SQL : exemple [nom]<br>
+-   positionnement left/top du corps <img src="../../img/localisation.png"><br>
+- largeur du titre :  / 0 = largeur automatique<br>
+- hauteur de chaque ligne (suivant taille de la police)<br>
+- Police (font), attribut, taille, bordure, alignement du corps <br><br>
+
+<b>Requete SQL</b><br><br>
+- sql : texte de la requete <br>
+   * variable: £idx, £aujourdhui ... définies en dyn/varlettretypepdf.inc<br>
+   * entre [] zones définies en requete SQL : exemple [nom]<br>

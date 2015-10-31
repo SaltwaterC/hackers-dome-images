@@ -1,0 +1,29 @@
+openMairie : http://www.openmairie.org
+
+Version nécessitant :
+    PHP4+ (testé avec PHP4 et avec PHP5)
+    APACHE
+
+
+Cette version utilise les librairies suivantes :
+    
+    DB PEAR (connecteur base de données)
+        http://pear.php.net/package/PEAR  (programme pear)
+        1.3.5  2005-02-18
+        http://www.pear.php.net/package/DB (extension db)
+        testé avec version 1.6.6 et 1.6.8
+    FPDF (impression format PDF)
+        http://www.fpdf.org
+        testé avec la version  :  1.52  (30/12/2003)  
+
+
+
+
+
+
+
+
+
+
+
+    

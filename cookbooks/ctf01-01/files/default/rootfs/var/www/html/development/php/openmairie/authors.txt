@@ -1,0 +1,25 @@
+$Id: authors.txt,v 1.1 2008-07-24 13:18:52 jbastide Exp $
+François Raynaud     /   contact@openmairie.org
+Jean-Louis Bastide   /   contact@openmairie.org
+Thierry Benita       /   tbenita@atreal.net
+Frederic Giva        /   f.giva@ville-arles.fr [version 2.00]
+
+Merci aux contributeurs:
+
+yannick Bernard      /   yannick6259@gmail.com (fonction mail)
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    

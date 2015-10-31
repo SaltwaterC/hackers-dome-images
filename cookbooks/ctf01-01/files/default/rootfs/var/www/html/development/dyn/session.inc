@@ -1,0 +1,1 @@
+<?phpsession_name('openscrutin');session_start();?>

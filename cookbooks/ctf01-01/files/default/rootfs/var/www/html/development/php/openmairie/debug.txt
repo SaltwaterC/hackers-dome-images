@@ -1,0 +1,22 @@
+$Id: debug.txt,v 1.1 2008-07-24 13:18:52 jbastide Exp $
+======================================
+openMairie : http://www.openmairie.org
+contact@openmairie.org
+======================================
+
+openstock (04/04/2008)
+en creation de form -> bug dans le tri en sous form qui ne prend pas la clé créée
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

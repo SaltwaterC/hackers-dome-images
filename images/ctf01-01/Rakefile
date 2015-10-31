@@ -1,0 +1,28 @@
+desc 'Runs "vagrant destroy" and removes .vagrant directory'
+task :clean do
+  system 'vagrant destroy -f'
+  rm_rf '.vagrant'
+end
+
+desc 'Runs "vagrant up"'
+task :up do
+  system 'vagrant up'
+end
+
+desc 'Runs "vagrant provision"'
+task :provision do
+  system 'vagrant provision'
+end
+
+desc 'Runs /opt/implode.sh script to remove Chef'
+task :implode do
+  system 'vagrant ssh -c "sudo /opt/implode.sh"'
+end
+
+desc 'Packages Vagrant box'
+task package: [:implode] do
+  system 'vagrant package --output ctf01-01.box'
+end
+
+desc 'Creates a box'
+task create: [:clean, :up, :package, :clean]

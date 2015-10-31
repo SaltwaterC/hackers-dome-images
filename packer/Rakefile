@@ -6,5 +6,6 @@ end
 desc 'Cleans the temporary files and build artifacts'
 task :clean do
   rm_rf 'packer_cache'
+  rm_rf 'output-virtualbox-iso'
   rm_f Dir['*-virtualbox.box']
 end

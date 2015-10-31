@@ -91,3 +91,11 @@ end
 service 'httpd' do
   action [:enable, :start]
 end
+
+im = '/opt/implode.sh'
+cookbook_file im do
+  source "rootfs#{im}"
+  user 'root'
+  group 'root'
+  mode '0700'
+end

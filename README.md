@@ -14,3 +14,10 @@ This is still under development. Will update this README to reflect the actual p
 ## Images
 
  * ctf01-01 - used for First Blood - CentOS 5.1 i386
+
+## Project structure
+
+ * packer - contains packer templates for creating the needed Vagrant base boxes
+ * cookbooks - contains Chef cookbooks for provision the ctf Vagrant boxes
+ * images - contains the Vagrantfile's used for creating the ctf boxes
+ * vagrantfiles - contains the Vagrantfile's which contain the example implementation of the ctf boxes

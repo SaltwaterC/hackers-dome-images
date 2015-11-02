@@ -2,18 +2,27 @@
 
 The source for the CTF images used for Hacker's Dome 1st and 2nd editions (First Blood and Double Kill). Made in collaboration with [CTF365](https://ctf365.com).
 
-This is still under development. Will update this README to reflect the actual progress.
+This project still under development.
 
 ## Dependencies
 
- * [Packer](https://packer.io) - used for building the Vagrant base boxes, not needed if you're using the pre-built boxes from Atlas
- * [ChefDK](https://downloads.chef.io/chef-dk) - used to develop and test the cft cookbooks, not needed to build the actual ctf images
- * [Vagrant](https://www.vagrantup.com) - required to build the ctf Vagrant boxes / required to use the pre-built ctf images
- * [vagrant-omnibus](https://github.com/chef/vagrant-omnibus) plugin - required for older distributions, Chef Omnibus is better than Vagrant at bootstrapping chef-client
+For using the images:
+
+ * [Vagrant](https://www.vagrantup.com)
+ * [VirtualBox](https://www.virtualbox.org)
+
+For development, you need the above list plus:
+
+ * [Packer](https://packer.io)
+ * [ChefDK](https://downloads.chef.io/chef-dk)
+ * [vagrant-omnibus](https://github.com/chef/vagrant-omnibus)
 
 ## Images
 
- * ctf01-01 - used for First Blood - CentOS 5.1 i386
+ * ctf01-01 - First Blood image, available
+ * ctf01-02 - First Blood image, in development
+ * ctf02-01 - Double Kill image, planned
+ * ctf02-02 - Double Kill image, planned
 
 ## Project structure
 

@@ -8,7 +8,7 @@ This is still under development. Will update this README to reflect the actual p
 
  * [Packer](https://packer.io) - used for building the Vagrant base boxes, not needed if you're using the pre-built boxes from Atlas
  * [ChefDK](https://downloads.chef.io/chef-dk) - used to develop and test the cft cookbooks, not needed to build the actual ctf images
- * [Vagrant](https://www.vagrantup.com) - required to build the ctf Vagrant boxes
+ * [Vagrant](https://www.vagrantup.com) - required to build the ctf Vagrant boxes / required to use the pre-built ctf images
  * [vagrant-omnibus](https://github.com/chef/vagrant-omnibus) plugin - required for older distributions, Chef Omnibus is better than Vagrant at bootstrapping chef-client
 
 ## Images

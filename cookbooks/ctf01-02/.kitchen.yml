@@ -1,0 +1,16 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 12.5.1
+
+platforms:
+  - name: ubuntu/precise64
+    driver:
+      box: ubuntu/precise64
+
+suites:
+  - name: ctf01-02
+    run_list:
+      - recipe[ctf01-02]

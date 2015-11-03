@@ -56,9 +56,9 @@ directory '/var/www/html/development' do
   mode '0755'
 end
 
-rd = '/var/www/html/development'
-remote_directory rd do
-  source "rootfs#{rd}"
+f = '/var/www/html/development'
+remote_directory f do
+  source "rootfs#{f}"
   user 'root'
   group 'root'
   mode '0755'
@@ -72,17 +72,17 @@ user 'root' do
   action :modify
 end
 
-ut = '/var/www/user-trophy.txt'
-cookbook_file ut do
-  source "rootfs#{ut}"
+f = '/var/www/user-trophy.txt'
+cookbook_file f do
+  source "rootfs#{f}"
   user 'apache'
   group 'apache'
   mode '0400'
 end
 
-st = '/root/superuser-trophy.txt'
-cookbook_file st do
-  source "rootfs#{st}"
+f = '/root/superuser-trophy.txt'
+cookbook_file f do
+  source "rootfs#{f}"
   user 'root'
   group 'root'
   mode '0400'
@@ -92,9 +92,9 @@ service 'httpd' do
   action [:enable, :start]
 end
 
-im = '/opt/implode.sh'
-cookbook_file im do
-  source "rootfs#{im}"
+f = '/opt/implode.sh'
+cookbook_file f do
+  source "rootfs#{f}"
   user 'root'
   group 'root'
   mode '0700'

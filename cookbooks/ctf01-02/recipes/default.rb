@@ -136,10 +136,10 @@ script 'kernel-purge' do
   code <<-EOF
     for linux_image in $(dpkg --list | grep linux-image | awk '{print $2}')
     do
-    	if [ "$linux_image" != "linux-image-3.8.0-29-generic" ]
-    	then
-    		apt-get remove --yes --purge $linux_image
-    	fi
+      if [ "$linux_image" != "linux-image-3.8.0-29-generic" ]
+      then
+        apt-get remove --yes --purge $linux_image
+      fi
     done
 
     apt-get autoremove --yes --purge

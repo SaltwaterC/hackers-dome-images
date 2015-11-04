@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --login
 
 pkill firefox
 rm -rf /home/xubuntu/.mozilla

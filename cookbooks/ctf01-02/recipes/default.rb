@@ -66,10 +66,17 @@ end
 # xubuntu password ca-4u$j*wd5?LcKqAM5"(Y5tbYZ9[jEN
 user 'xubuntu' do
   uid '600'
-  gid '600'
+  gid 'xubuntu'
   home '/home/xubuntu'
   shell '/bin/bash'
   password '$6$BShdj9H4$1XEhTO3y69iajsUj0Mb3Wmyt6HtVeNQcqImOWs0RiIfVOPgl9x4mXOKJVluzNxXkRVTK9jLOSVVhO6lNpDR740'
+end
+
+# manage_home is useless
+directory '/home/xubuntu' do
+  user 'xubuntu'
+  group 'xubuntu'
+  mode '700'
 end
 
 execute '/usr/lib/lightdm/lightdm-set-defaults --autologin xubuntu'
@@ -78,7 +85,7 @@ ark 'firefox' do
   url 'http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/17.0.1/linux-x86_64/en-US/firefox-17.0.1.tar.bz2'
   version '17.0.1'
   checksum 'e05963b4c8906e4b660717070bee568a3b3b0680667ea9eaa53d9b424f5f8843'
-  path '/opt'
+  prefix_root '/opt'
   home_dir '/opt/firefox'
 end
 
@@ -90,7 +97,7 @@ cookbook_file f do
   mode '0666'
 end
 
-f = '/opt/firefox.sh'
+f = '/opt/ff-run.sh'
 cookbook_file f do
   source "rootfs#{f}"
   user 'xubuntu'
@@ -100,7 +107,7 @@ end
 
 cron 'firefox' do
   user 'xubuntu'
-  command '/opt/firefox.sh'
+  command '/opt/ff-run.sh'
 end
 
 f = '/home/xubuntu/user-trophy.txt'
@@ -146,5 +153,5 @@ end
 end
 
 execute 'reboot' do
-  not_if '[ `uname -r` == "3.8.0-29-generic" ]'
+  not_if { `uname -r` == "3.8.0-29-generic\n" }
 end

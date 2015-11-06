@@ -3,6 +3,7 @@ driver:
   customize:
     cpus: 2
     memory: 1024
+    nictype1: virtio
 
 provisioner:
   name: chef_zero

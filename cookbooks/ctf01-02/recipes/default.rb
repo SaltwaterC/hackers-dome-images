@@ -19,8 +19,8 @@ include_recipe 'ark::default'
   /var/log/apache2/error.log
   /var/log/apache2/other_vhosts_access.log
   /etc/udev/rules.d/70-persistent-net.rules
-).each do |f|
-  file f do
+).each do |fi|
+  file fi do
     action :delete
   end
 end
@@ -46,9 +46,9 @@ package pkg
   /etc/apache2/sites-available/default
   /etc/apache2/sites-available/default-localhost
   /etc/ssh/sshd_config
-).each do |f|
-  cookbook_file f do
-    source "rootfs#{f}"
+).each do |fi|
+  cookbook_file fi do
+    source "rootfs#{fi}"
     owner 'root'
     group 'root'
     mode '0644'
@@ -150,6 +150,14 @@ end
   service s do
     action [:enable, :start]
   end
+end
+
+f = '/opt/implode.sh'
+cookbook_file f do
+  source "rootfs#{f}"
+  user 'root'
+  group 'root'
+  mode '0700'
 end
 
 execute 'reboot' do

@@ -6,8 +6,8 @@
   /root/.bash_history
   /var/log/httpd/access_log
   /var/log/httpd/error_log
-).each do |f|
-  file f do
+).each do |fi|
+  file fi do
     action :delete
   end
 end
@@ -38,9 +38,9 @@ execute 'yum -y install httpd php php-mysql system-config-services'
   /var/www/html/index.html
   /var/www/html/math.jpg
   /var/www/html/info.php
-).each do |f|
-  cookbook_file f do
-    source "rootfs#{f}"
+).each do |fi|
+  cookbook_file fi do
+    source "rootfs#{fi}"
     user 'root'
     group 'root'
     mode '0644'

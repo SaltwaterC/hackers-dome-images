@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 describe 'ctf01-01' do
-  %w(httpd php php-mysql system-config-services).each do |pkg|
+  %w(httpd php php-mysql).each do |pkg|
     describe package(pkg) do
       it { is_expected.to be_installed }
     end
@@ -55,6 +55,13 @@ describe 'ctf01-01' do
   end
 
   describe command('uname -r') do
-    its(:stdout) { is_expected.to contain '2.6.18-53.el5' }
+    its(:stdout) { is_expected.to eq "2.6.18-53.el5\n" }
+  end
+
+  describe file('/opt/implode.sh') do
+    it { is_expected.to be_file }
+    it { is_expected.to be_owned_by 'root' }
+    it { is_expected.to be_grouped_into 'root' }
+    it { is_expected.to be_mode '700' }
   end
 end

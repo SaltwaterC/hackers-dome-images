@@ -4,6 +4,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider 'virtualbox' do |vb|
     vb.name = 'ctf01-02'
+    vb.cpus = 2
+    vb.memory = 1024
     vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
     vb.customize ['modifyvm', :id, '--nictype2', 'virtio']
   end
@@ -11,8 +13,24 @@ Vagrant.configure(2) do |config|
   config.vm.network 'private_network', ip: '10.10.10.12'
 
   config.omnibus.chef_version = '12.5.1'
+  config.berkshelf.enabled = true
+  config.berkshelf.berksfile_path = '../../cookbooks/ctf01-02/Berksfile'
+
   config.vm.provision 'chef_zero' do |chef|
     chef.cookbooks_path = '../../cookbooks'
-    chef.add_recipe 'ctf01-02'
+    chef.add_recipe 'ctf01-02::stage1'
   end
+  config.vm.provision :reload
+
+  config.vm.provision 'chef_zero' do |chef|
+    chef.cookbooks_path = '../../cookbooks'
+    chef.add_recipe 'ctf01-02::stage2'
+  end
+  config.vm.provision :reload
+
+  config.vm.provision 'chef_zero' do |chef|
+    chef.cookbooks_path = '../../cookbooks'
+    chef.add_recipe 'ctf01-02::stage3'
+  end
+  config.vm.provision :reload
 end

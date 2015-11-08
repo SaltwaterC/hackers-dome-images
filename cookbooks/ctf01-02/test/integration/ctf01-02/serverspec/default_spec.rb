@@ -1,8 +1,26 @@
 require_relative 'spec_helper'
 
-describe 'ctf01-02' do
-  describe package('linux-image-3.8.0-29-generic') do
-    it { is_expected.to be_installed }
+describe 'ctf01-02::stage1' do
+  %w(linux-image-3.8.0-29-generic linux-headers-3.8.0-29-generic dkms).each do |pkg|
+    describe package(pkg) do
+      it { is_expected.to be_installed }
+    end
+  end
+end
+
+describe 'ctf01-02::stage3' do
+  %w(
+    htop
+    xubuntu-desktop
+    apache2
+    libapache2-mod-php5
+    flashplugin-installer
+    build-essential
+    git
+  ).each do |pkg|
+    describe package(pkg) do
+      it { is_expected.to be_installed }
+    end
   end
 
   describe file('/var/www/index.php') do
@@ -57,10 +75,6 @@ describe 'ctf01-02' do
     it { is_expected.to be_grouped_into 'root' }
     it { is_expected.to be_mode '400' }
     it { is_expected.to contain 'df9b9625c563cb6f81e5abf25d7b86d0bf6ed3c3' }
-  end
-
-  describe command('uname -r') do
-    its(:stdout) { is_expected.to eq "3.8.0-29-generic\n" }
   end
 
   %w(22 80).each do |p|

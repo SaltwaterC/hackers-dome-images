@@ -16,6 +16,8 @@ For development, you need the above list plus:
  * [Packer](https://packer.io)
  * [ChefDK](https://downloads.chef.io/chef-dk)
  * [vagrant-omnibus](https://github.com/chef/vagrant-omnibus)
+ * [vagrant-berkshelf](https://github.com/berkshelf/vagrant-berkshelf)
+ * [vagrant-reload](https://github.com/aidanns/vagrant-reload)
 
 ## Images
 

@@ -28,7 +28,7 @@ describe 'ctf01-02::stage3' do
     it { is_expected.to be_owned_by 'root' }
     it { is_expected.to be_grouped_into 'root' }
     it { is_expected.to be_mode '644' }
-    it { is_expected.to contain %q(Hi people. Post a message while I'm AFK. Say what you need. I'll check periodically to see if there's something new.) }
+    it { is_expected.to contain %(Hi people. Post a message while I'm AFK. Say what you need. I'll check periodically to see if there's something new.) }
   end
 
   describe user('xubuntu') do

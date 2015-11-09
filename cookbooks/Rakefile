@@ -8,11 +8,18 @@ task :verify do
   system 'kitchen verify'
 end
 
-desc 'kitchen verify && rubocop && foodcritic'
-task test: [:default, :verify] do
-  system 'rubocop'
+desc 'rubocop'
+task :rubocop do
+  system 'rubocop -c ../.rubocop.yml'
+end
+
+desc 'foodcritic'
+task :foodcritic do
   system 'foodcritic .'
 end
+
+desc 'kitchen verify && rubocop && foodcritic'
+task test: [:default, :verify, :rubocop, :foodcritic]
 
 desc 'kitchen destroy and cleanup'
 task :clean do

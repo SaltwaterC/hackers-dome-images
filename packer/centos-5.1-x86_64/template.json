@@ -6,9 +6,10 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "../scripts/rh-base.sh",
+            "../scripts/rh-5.1-base.sh",
             "../scripts/vagrant.sh",
             "../scripts/virtualbox.sh",
+            "../scripts/rh-5.1-fixdns.sh",
             "../scripts/rh-cleanup.sh"
           ]
         }

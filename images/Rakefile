@@ -2,6 +2,7 @@ desc 'Runs "vagrant destroy" and removes .vagrant directory'
 task :clean do
   system 'vagrant destroy -f'
   rm_rf '.vagrant'
+  rm_f Dir['ctf*.box']
 end
 
 desc 'Runs "vagrant up"'
@@ -14,15 +15,14 @@ task :provision do
   system 'vagrant provision'
 end
 
-desc 'Runs /opt/implode.sh script to remove Chef'
+desc 'Runs /opt/implode.sh script to cleanup the box'
 task :implode do
   system 'vagrant ssh -c "sudo /opt/implode.sh"'
 end
 
 desc 'Packages Vagrant box'
 task package: [:implode] do
-  box_name = File.expand_path(File.dirname(__FILE__)).split('/').pop
-  system "vagrant package --output #{box_name}.box"
+  system "vagrant package --output #{$box_name}.box"
 end
 
 desc 'Creates a box'

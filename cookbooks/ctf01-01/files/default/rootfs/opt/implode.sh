@@ -17,3 +17,5 @@ echo 'PEERDNS=yes' >> /etc/sysconfig/network-scripts/ifcfg-eth0
 rm -vf /etc/ssh/ssh_host_*
 
 rm -vf /opt/implode.sh
+
+sync

@@ -1,5 +1,6 @@
 unless node['ctf01-02']['skip_stage_check'] == true
-  if `uname -r` != "3.8.0-29-generic\n"
+  cmd = 'uname -r'
+  if Mixlib::ShellOut(cmd).new.stdout != "3.8.0-29-generic\n"
     fail 'Error: expecting kernel 3.8.0-29-generic after stage1'
   end
 end

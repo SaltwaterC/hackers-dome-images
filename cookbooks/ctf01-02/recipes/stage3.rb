@@ -1,5 +1,6 @@
 unless node['ctf01-02']['skip_stage_check'] == true
-  if `lsmod | grep -io vboxguest | xargs modinfo | grep -iw version | awk '{print $2}'` != "#{node['ctf01-02']['vbox_version']}\n"
+  cmd = %(lsmod | grep -io vboxguest | xargs modinfo | grep -iw version | awk '{print $2}')
+  if Mixlib::ShellOut(cmd).new.stdout != "#{node['ctf01-02']['vbox_version']}\n"
     fail "Error: expecting VirtualBox Guest Additions #{node['ctf01-02']['vbox_version']} after stage2"
   end
 end

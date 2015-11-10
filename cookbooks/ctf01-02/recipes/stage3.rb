@@ -1,6 +1,8 @@
+extend Chef::Mixin::ShellOut
+
 unless node['ctf01-02']['skip_stage_check'] == true
   cmd = %(lsmod | grep -io vboxguest | xargs modinfo | grep -iw version | awk '{print $2}')
-  if Mixlib::ShellOut(cmd).new.stdout != "#{node['ctf01-02']['vbox_version']}\n"
+  if shell_out(cmd).stdout != "#{node['ctf01-02']['vbox_version']}\n"
     fail "Error: expecting VirtualBox Guest Additions #{node['ctf01-02']['vbox_version']} after stage2"
   end
 end

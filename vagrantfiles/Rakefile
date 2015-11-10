@@ -1,0 +1,5 @@
+desc 'Runs "vagrant destroy" and deletes .vagrant'
+task :clean do
+  system 'vagrant destroy -f'
+  rm_rf '.vagrant'
+end

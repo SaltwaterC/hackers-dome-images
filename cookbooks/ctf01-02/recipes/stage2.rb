@@ -24,5 +24,5 @@ script 'update_virtualbox_guest_additions' do
     umount /mnt
     rm -f /tmp/vbox.iso
   EOF
-  not_if { node['ctf01-02']['skip_stage_check'] || uname_r == expect_version }
+  not_if { node['ctf01-02']['skip_stage_check'] || File.directory?("/opt/VBoxGuestAdditions-#{node['ctf01-02']['vbox_version']}") }
 end

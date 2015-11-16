@@ -9,4 +9,8 @@ rm -vf /home/vagrant/install.sh
 rm -vrf /tmp/vagrant-chef
 rm -vrf /var/chef
 
+rm -vf /etc/ssh/ssh_host_*
+
 rm -vf /opt/implode.sh
+
+sync

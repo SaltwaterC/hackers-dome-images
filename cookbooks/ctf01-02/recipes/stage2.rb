@@ -1,8 +1,10 @@
 extend Chef::Mixin::ShellOut
 
+uname_r = shell_out('uname -r').stdout
+expect_version = "3.8.0-29-generic\n"
+
 unless node['ctf01-02']['skip_stage_check'] == true
-  cmd = 'uname -r'
-  if shell_out(cmd).stdout != "3.8.0-29-generic\n"
+  if uname_r != expect_version
     fail 'Error: expecting kernel 3.8.0-29-generic after stage1'
   end
 end
@@ -22,5 +24,5 @@ script 'update_virtualbox_guest_additions' do
     umount /mnt
     rm -f /tmp/vbox.iso
   EOF
-  not_if { node['ctf01-02']['skip_stage_check'] }
+  not_if { node['ctf01-02']['skip_stage_check'] || uname_r == expect_version }
 end

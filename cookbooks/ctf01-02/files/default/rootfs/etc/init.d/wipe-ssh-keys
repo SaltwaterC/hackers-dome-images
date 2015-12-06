@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/bin/rm -vf /etc/ssh/ssh_host_*
+/bin/rm -vf /etc/init.d/wipe-ssh-keys
+/bin/rm -vf /etc/rc0.d/K90wipe-ssh-keys
+
+/bin/sync
+
+exit 0

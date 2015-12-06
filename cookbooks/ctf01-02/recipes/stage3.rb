@@ -123,12 +123,21 @@ end
   end
 end
 
-f = '/opt/implode.sh'
-cookbook_file f do
-  source "rootfs#{f}"
-  user 'root'
-  group 'root'
-  mode '0700'
+%w(
+  /opt/implode.sh
+  /etc/init.d/wipe-ssh-keys
+  /etc/rc.local
+).each do |f|
+  cookbook_file f do
+    source "rootfs#{f}"
+    user 'root'
+    group 'root'
+    mode '0755'
+  end
+end
+
+link '/etc/rc0.d/K90wipe-ssh-keys' do
+  to '../init.d/wipe-ssh-keys'
 end
 
 %w(

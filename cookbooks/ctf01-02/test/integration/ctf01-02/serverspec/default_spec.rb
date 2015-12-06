@@ -83,10 +83,23 @@ describe 'ctf01-02::stage3' do
     end
   end
 
-  describe file('/opt/implode.sh') do
-    it { is_expected.to be_file }
-    it { is_expected.to be_owned_by 'root' }
-    it { is_expected.to be_grouped_into 'root' }
-    it { is_expected.to be_mode '700' }
+  %w(
+    /opt/implode.sh
+    /etc/init.d/wipe-ssh-keys
+  ).each do |f|
+    describe file(f) do
+      it { is_expected.to be_file }
+      it { is_expected.to be_owned_by 'root' }
+      it { is_expected.to be_grouped_into 'root' }
+      it { is_expected.to be_mode '755' }
+    end
+  end
+
+  describe file('/etc/rc0.d/K90wipe-ssh-keys') do
+    it { is_expected.to be_symlink }
+  end
+
+  describe file('/etc/rc.local') do
+    it { is_expected.to contain 'dpkg-reconfigure openssh-server' }
   end
 end

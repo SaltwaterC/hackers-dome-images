@@ -26,4 +26,4 @@ task :package do
 end
 
 desc 'Builds a box'
-task build: [:clean, :up, :implode, :package, :clean]
+task build: [:clean, :up, :implode, :package]

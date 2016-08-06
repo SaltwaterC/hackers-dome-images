@@ -5,7 +5,7 @@ expect_version = "3.8.0-29-generic\n"
 
 unless node['ctf01-02']['skip_stage_check'] == true
   if uname_r != expect_version
-    fail 'Error: expecting kernel 3.8.0-29-generic after stage1'
+    raise 'Error: expecting kernel 3.8.0-29-generic after stage1'
   end
 end
 

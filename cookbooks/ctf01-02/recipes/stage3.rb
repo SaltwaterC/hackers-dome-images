@@ -3,7 +3,7 @@ extend Chef::Mixin::ShellOut
 unless node['ctf01-02']['skip_stage_check'] == true
   cmd = %(lsmod | grep -io vboxguest | xargs modinfo | grep -iw version | awk '{print $2}')
   if shell_out(cmd).stdout != "#{node['ctf01-02']['vbox_version']}\n"
-    fail "Error: expecting VirtualBox Guest Additions #{node['ctf01-02']['vbox_version']} after stage2"
+    raise "Error: expecting VirtualBox Guest Additions #{node['ctf01-02']['vbox_version']} after stage2"
   end
 end
 
@@ -127,9 +127,9 @@ end
   /opt/implode.sh
   /etc/init.d/wipe-ssh-keys
   /etc/rc.local
-).each do |f|
+).each do |fi|
   cookbook_file f do
-    source "rootfs#{f}"
+    source "rootfs#{fi}"
     user 'root'
     group 'root'
     mode '0755'

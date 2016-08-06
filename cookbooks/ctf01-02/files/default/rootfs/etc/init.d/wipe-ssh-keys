@@ -1,5 +1,15 @@
 #!/bin/sh
 
+### BEGIN INIT INFO
+# Provides: wipe-ssh-keys
+# Required-Start: $local_fs
+# Required-Stop: $local_fs
+# Default-Start:  2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: wipe-ssh-keys
+# Description: wipe-ssh-keys
+### END INIT INFO
+
 /bin/rm -vf /etc/ssh/ssh_host_*
 /bin/rm -vf /etc/init.d/wipe-ssh-keys
 /bin/rm -vf /etc/rc0.d/K90wipe-ssh-keys

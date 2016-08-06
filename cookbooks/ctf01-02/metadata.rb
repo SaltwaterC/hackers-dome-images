@@ -5,6 +5,8 @@ license 'MIT'
 description 'Installs / Configures ctf01-02'
 long_description 'Installs / Configures ctf01-02'
 version '0.1.2'
+source_url 'https://github.com/SaltwaterC/hackers-dome-images'
+issues_url 'https://github.com/SaltwaterC/hackers-dome-images/issues'
 
 depends 'apt'
 depends 'ark'

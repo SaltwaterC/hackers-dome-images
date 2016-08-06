@@ -5,6 +5,13 @@ task :clean do
   rm_f Dir['ctf*.box']
 end
 
+desc 'Installs runtime dependencies'
+task :setup do
+  sh 'vagrant plugin install vagrant-omnibus'
+  sh 'vagrant plugin install vagrant-berkshelf'
+  sh 'vagrant plugin install vagrant-reload'
+end
+
 desc 'Runs "vagrant up"'
 task :up do
   system 'vagrant up'
@@ -26,4 +33,4 @@ task :package do
 end
 
 desc 'Builds a box'
-task build: [:clean, :up, :implode, :package]
+task build: [:clean, :setup, :up, :implode, :package]

@@ -1,1 +1,2 @@
+import '../../Rakefile'
 import '../Rakefile'

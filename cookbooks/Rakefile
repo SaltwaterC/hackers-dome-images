@@ -1,10 +1,4 @@
-desc 'Installs runtime dependencies'
-task :setup do
-  sh 'vagrant plugin install vagrant-vbguest'
-  sh 'vagrant plugin install vagrant-omnibus'
-  sh 'vagrant plugin install vagrant-berkshelf'
-  sh 'vagrant plugin install vagrant-reload'
-end
+import '../Rakefile'
 
 desc 'kitchen converge'
 task :default do

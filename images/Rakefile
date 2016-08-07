@@ -28,5 +28,8 @@ task :package do
   system "vagrant package --output #{$box_name}.box"
 end
 
-desc 'Builds a box'
+desc 'Builds a box from scratch'
 task build: [:clean, :setup, :up, :implode, :package]
+
+desc 'Builds a development box'
+task box: [:up, :provision, :implode, :package]

@@ -23,6 +23,7 @@ package pkg
   /etc/apache2/sites-available/default
   /etc/apache2/sites-available/default-localhost
   /etc/ssh/sshd_config
+  /opt/interfaces
 ).each do |fi|
   cookbook_file fi do
     source "rootfs#{fi}"

@@ -116,7 +116,6 @@ end
 
 %w(
   /opt/implode.sh
-  /etc/init.d/wipe-ssh-keys
   /etc/rc.local
 ).each do |fi|
   cookbook_file fi do
@@ -125,10 +124,6 @@ end
     group 'root'
     mode '0755'
   end
-end
-
-link '/etc/rc0.d/K90wipe-ssh-keys' do
-  to '../init.d/wipe-ssh-keys'
 end
 
 %w(
@@ -141,8 +136,17 @@ end
   /var/log/apache2/error.log
   /var/log/apache2/other_vhosts_access.log
   /etc/udev/rules.d/70-persistent-net.rules
+
 ).each do |fi|
   file fi do
     action :delete
   end
+end
+
+pkg = %w(
+  rpcbind
+  cloud-init
+)
+package pkg do
+  action :purge
 end

@@ -1,8 +1,6 @@
 #!/bin/sh -e
 
-if [ ! -f /etc/ssh/ssh_host_rsa_key ] || [ ! -f /etc/ssh/ssh_host_dsa_key ]
-then
-  dpkg-reconfigure openssh-server
-fi
+rm -f /etc/ssh/ssh_host_*
+dpkg-reconfigure openssh-server
 
 exit 0

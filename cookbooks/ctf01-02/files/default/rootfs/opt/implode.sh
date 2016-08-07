@@ -2,7 +2,9 @@
 
 # undo Vagrant's broken /etc/network/interfaces
 cp /opt/interfaces /etc/network/interfaces
-rm -f /opt/interfaces
+rm -vf /opt/interfaces
+
+rm -vf /etc/udev/rules.d/70-persistent-net.rules
 
 apt-get -y autoremove --purge chef
 

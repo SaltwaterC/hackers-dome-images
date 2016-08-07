@@ -8,13 +8,14 @@ This project still under development.
 
 For using the images:
 
- * [Vagrant](https://www.vagrantup.com)
+ * [Vagrant](https://www.vagrantup.com) (1.8+ for development)
  * [VirtualBox](https://www.virtualbox.org)
 
 For development, you need the above list plus:
 
  * [Packer](https://packer.io)
  * [ChefDK](https://downloads.chef.io/chef-dk)
+ * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest)
  * [vagrant-omnibus](https://github.com/chef/vagrant-omnibus)
  * [vagrant-berkshelf](https://github.com/berkshelf/vagrant-berkshelf)
  * [vagrant-reload](https://github.com/aidanns/vagrant-reload)

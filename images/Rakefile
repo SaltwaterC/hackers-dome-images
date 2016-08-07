@@ -32,4 +32,4 @@ desc 'Builds a box from scratch'
 task build: [:clean, :setup, :up, :implode, :package]
 
 desc 'Builds a development box'
-task box: [:up, :provision, :implode, :package]
+task box: [:up, :implode, :package]

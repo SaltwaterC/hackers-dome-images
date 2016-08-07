@@ -22,7 +22,7 @@ For development, you need the above list plus:
 
 ## Images
 
- * ctf01-01 - First Blood image, available
+ * [ctf01-01](https://atlas.hashicorp.com/SaltwaterC/boxes/ctf01-01) - First Blood image, available
  * ctf01-02 - First Blood image, in development
  * ctf02-01 - Double Kill image, planned
  * ctf02-02 - Double Kill image, planned

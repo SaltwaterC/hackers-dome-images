@@ -137,7 +137,6 @@ end
   /var/log/apache2/error.log
   /var/log/apache2/other_vhosts_access.log
   /etc/udev/rules.d/70-persistent-net.rules
-
 ).each do |fi|
   file fi do
     action :delete

@@ -1,5 +1,6 @@
 desc 'Installs runtime dependencies'
 task :setup do
+  sh 'vagrant plugin install vagrant-vbguest'
   sh 'vagrant plugin install vagrant-omnibus'
   sh 'vagrant plugin install vagrant-berkshelf'
   sh 'vagrant plugin install vagrant-reload'
@@ -22,8 +23,11 @@ end
 
 desc 'foodcritic'
 task :foodcritic do
-  system 'foodcritic .'
+  system 'foodcritic --progress --epic-fail any .'
 end
+
+desc 'Static code analysis'
+task lint: [:rubocop, :foodcritic]
 
 desc 'kitchen verify && rubocop && foodcritic'
 task test: [:default, :verify, :rubocop, :foodcritic]

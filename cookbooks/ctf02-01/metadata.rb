@@ -1,0 +1,12 @@
+name 'ctf02-01'
+maintainer 'Stefan Rusu'
+maintainer_email 'saltwaterc@gmail.com'
+license 'MIT'
+description 'Installs / Configures ctf02-01'
+long_description 'Installs / Configures ctf02-01'
+version '0.2.1'
+source_url 'https://github.com/SaltwaterC/hackers-dome-images'
+issues_url 'https://github.com/SaltwaterC/hackers-dome-images/issues'
+
+depends 'apt'
+depends 'ark'

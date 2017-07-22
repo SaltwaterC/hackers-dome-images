@@ -8,7 +8,7 @@ end
 
 include_recipe 'apt::default'
 
-package %w(linux-image-3.8.0-29-generic linux-headers-3.8.0-29-generic dkms)
+package %w[linux-image-3.8.0-29-generic linux-headers-3.8.0-29-generic dkms]
 
 script 'kernel_purge' do
   interpreter 'bash'

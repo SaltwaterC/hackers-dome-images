@@ -1,7 +1,11 @@
 require_relative 'spec_helper'
 
 describe 'ctf01-02::stage1' do
-  %w(linux-image-3.8.0-29-generic linux-headers-3.8.0-29-generic dkms).each do |pkg|
+  %w[
+    linux-image-3.8.0-29-generic
+    linux-headers-3.8.0-29-generic
+    dkms
+  ].each do |pkg|
     describe package(pkg) do
       it { is_expected.to be_installed }
     end
@@ -9,7 +13,7 @@ describe 'ctf01-02::stage1' do
 end
 
 describe 'ctf01-02::stage3' do
-  %w(
+  %w[
     htop
     xubuntu-desktop
     apache2
@@ -17,7 +21,7 @@ describe 'ctf01-02::stage3' do
     flashplugin-installer
     build-essential
     git
-  ).each do |pkg|
+  ].each do |pkg|
     describe package(pkg) do
       it { is_expected.to be_installed }
     end
@@ -52,10 +56,7 @@ describe 'ctf01-02::stage3' do
     it { is_expected.to be_directory }
   end
 
-  %w(
-    /opt/firefox/firefox
-    /opt/ff-run.sh
-  ).each do |f|
+  %w[/opt/firefox/firefox /opt/ff-run.sh].each do |f|
     describe file(f) do
       it { is_expected.to be_file }
     end
@@ -77,16 +78,13 @@ describe 'ctf01-02::stage3' do
     it { is_expected.to contain 'df9b9625c563cb6f81e5abf25d7b86d0bf6ed3c3' }
   end
 
-  %w(22 80).each do |p|
+  %w[22 80].each do |p|
     describe port(p) do
       it { is_expected.to be_listening.with('tcp') }
     end
   end
 
-  %w(
-    /opt/implode.sh
-    /etc/init.d/wipe-ssh-keys
-  ).each do |f|
+  %w[/opt/implode.sh /etc/init.d/wipe-ssh-keys].each do |f|
     describe file(f) do
       it { is_expected.to be_file }
       it { is_expected.to be_owned_by 'root' }

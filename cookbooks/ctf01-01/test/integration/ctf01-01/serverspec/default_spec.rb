@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 describe 'ctf01-01' do
-  %w(httpd php php-mysql).each do |pkg|
+  %w[httpd php php-mysql].each do |pkg|
     describe package(pkg) do
       it { is_expected.to be_installed }
     end

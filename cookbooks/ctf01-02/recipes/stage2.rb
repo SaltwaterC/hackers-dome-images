@@ -9,7 +9,7 @@ unless node['ctf01-02']['skip_stage_check'] == true
   end
 end
 
-package %w(virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms) do
+package %w[virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms] do
   action :purge
   not_if { node['ctf01-02']['skip_stage_check'] }
 end
@@ -17,20 +17,21 @@ end
 include_recipe 'apt::default'
 include_recipe 'ark::default'
 
-# separate into multiple package resources as xubuntu-desktop with the list from below is too much for Chef to handle
+# separate into multiple package resources as xubuntu-desktop with the list from
+# below is too much for Chef to handle
 package 'xubuntu-desktop'
 
-pkg = %w(
+pkg = %w[
   htop
   apache2
   libapache2-mod-php5
   flashplugin-installer
   build-essential
   git
-)
+]
 package pkg
 
-%w(
+%w[
   /var/www/index.php
   /etc/hosts
   /etc/hostname
@@ -40,7 +41,7 @@ package pkg
   /etc/apache2/sites-available/default-localhost
   /etc/ssh/sshd_config
   /opt/interfaces
-).each do |fi|
+].each do |fi|
   cookbook_file fi do
     source "rootfs#{fi}"
     owner 'root'
@@ -125,16 +126,13 @@ link '/etc/apache2/sites-enabled/default-localhost' do
   notifies :reload, 'service[apache2]', :delayed
 end
 
-%w(ssh apache2).each do |s|
+%w[ssh apache2].each do |s|
   service s do
-    action [:enable, :start]
+    action %i[enable start]
   end
 end
 
-%w(
-  /opt/implode.sh
-  /etc/rc.local
-).each do |fi|
+%w[/opt/implode.sh /etc/rc.local].each do |fi|
   cookbook_file fi do
     source "rootfs#{fi}"
     user 'root'
@@ -143,7 +141,7 @@ end
   end
 end
 
-%w(
+%w[
   /var/mail/root
   /root/.bash_history
   /home/xubuntu/.bash_history
@@ -152,17 +150,14 @@ end
   /var/log/apache2/access.log
   /var/log/apache2/error.log
   /var/log/apache2/other_vhosts_access.log
-).each do |fi|
+].each do |fi|
   file fi do
     action :delete
   end
 end
 
-pkg = %w(
-  rpcbind
-  cloud-init
-  network-manager
-)
+pkg = %w[rpcbind cloud-init network-manager]
+
 package pkg do
   action :purge
 end

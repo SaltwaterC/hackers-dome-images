@@ -1,4 +1,4 @@
-%w(
+%w[
   /var/spool/mail/root
   /root/anaconda-ks.cfg
   /root/install.log
@@ -6,22 +6,22 @@
   /root/.bash_history
   /var/log/httpd/access_log
   /var/log/httpd/error_log
-).each do |fi|
+].each do |fi|
   file fi do
     action :delete
   end
 end
 
-%w(
+%w[
   iptables
   sendmail
   cups
   portmap
   nfs
   nfslock
-).each do |s|
+].each do |s|
   service s do
-    action [:disable, :stop]
+    action %i[disable stop]
   end
 end
 
@@ -29,7 +29,7 @@ end
 # https://tickets.opscode.com/browse/CHEF-4867
 execute 'yum -y install httpd php php-mysql system-config-services'
 
-%w(
+%w[
   /etc/selinux/config
   /etc/php.ini
   /etc/sysconfig/network
@@ -38,7 +38,7 @@ execute 'yum -y install httpd php php-mysql system-config-services'
   /var/www/html/index.html
   /var/www/html/math.jpg
   /var/www/html/info.php
-).each do |fi|
+].each do |fi|
   cookbook_file fi do
     source "rootfs#{fi}"
     user 'root'
@@ -89,7 +89,7 @@ cookbook_file f do
 end
 
 service 'httpd' do
-  action [:enable, :start]
+  action %i[enable start]
 end
 
 f = '/opt/implode.sh'
